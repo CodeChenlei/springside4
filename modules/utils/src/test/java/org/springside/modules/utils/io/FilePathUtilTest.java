@@ -1,11 +1,10 @@
 package org.springside.modules.utils.io;
 
-import static org.assertj.core.api.Assertions.*;
-
+import com.google.common.io.Files;
 import org.junit.Test;
 import org.springside.modules.utils.base.Platforms;
 
-import com.google.common.io.Files;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class FilePathUtilTest {
 

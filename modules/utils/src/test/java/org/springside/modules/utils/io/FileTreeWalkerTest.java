@@ -1,13 +1,13 @@
 package org.springside.modules.utils.io;
 
-import static org.assertj.core.api.Assertions.*;
+import org.junit.Test;
+import org.springside.modules.utils.number.RandomUtil;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
-import org.junit.Test;
-import org.springside.modules.utils.number.RandomUtil;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class FileTreeWalkerTest {
 
@@ -53,15 +53,15 @@ public class FileTreeWalkerTest {
 		assertThat(files).hasSize(2);
 		files = FileTreeWalker.listFileWithRegexFileName(tmpDir, ".*\\.tp");
 		assertThat(files).hasSize(0);
-		
-		
+
+
 		//antpath
 		files = FileTreeWalker.listFileWithAntPath(tmpDir, "**/*.tmp");
 		assertThat(files).hasSize(2);
-		
+
 		files = FileTreeWalker.listFileWithAntPath(tmpDir, "*/*.tmp");
 		assertThat(files).hasSize(1);
-		
+
 		files = FileTreeWalker.listFileWithAntPath(tmpDir, "*.tp");
 		assertThat(files).hasSize(0);
 

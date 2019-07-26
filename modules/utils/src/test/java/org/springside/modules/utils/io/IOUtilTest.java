@@ -1,14 +1,14 @@
 package org.springside.modules.utils.io;
 
-import static org.assertj.core.api.Assertions.*;
+import org.junit.Test;
+import org.springside.modules.utils.io.type.StringBuilderWriter;
+import org.springside.modules.utils.text.Charsets;
 
 import java.io.ByteArrayOutputStream;
 import java.io.Closeable;
 import java.io.IOException;
 
-import org.junit.Test;
-import org.springside.modules.utils.io.type.StringBuilderWriter;
-import org.springside.modules.utils.text.Charsets;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class IOUtilTest {
 

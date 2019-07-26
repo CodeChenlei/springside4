@@ -1,15 +1,15 @@
 package org.springside.modules.utils.io;
 
-import static org.assertj.core.api.Assertions.*;
+import org.junit.Test;
+import org.springside.modules.utils.base.Platforms;
+import org.springside.modules.utils.number.RandomUtil;
+import org.springside.modules.utils.text.Charsets;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
-import org.junit.Test;
-import org.springside.modules.utils.base.Platforms;
-import org.springside.modules.utils.number.RandomUtil;
-import org.springside.modules.utils.text.Charsets;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class FileUtilTest {
 
@@ -42,7 +42,7 @@ public class FileUtilTest {
 		String content = "haha\nhehe";
 		FileUtil.write(content, file);
 		assertThat(FileUtil.toString(file)).isEqualTo(content);
-		
+
 		File newFile = new File(FilePathUtil.contact(Platforms.TMP_DIR, "testFile" + RandomUtil.nextInt()));
 		File newFile2 = new File(FilePathUtil.contact(Platforms.TMP_DIR, "testFile" + RandomUtil.nextInt()));
 
@@ -53,7 +53,7 @@ public class FileUtilTest {
 		FileUtil.moveFile(newFile, newFile2);
 		assertThat(FileUtil.toString(newFile2)).isEqualTo("haha\nhehe");
 
-	
+
 	}
 
 	@Test
